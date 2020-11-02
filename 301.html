@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Pregunta 301</title>
+</head>
+<body>
+    <xmp>
+        QUESTION 301
+        You write the following JavaScript code. (Line numbers are included for reference only.)
+
+        <script>
+            bestStudent = new Student ("David Hamilton");
+            document.write (bestStudent.fullname + " is registered.");
+        </script>
+
+        You need to write a function that will initialize and encapsulate the member variable fullname.
+        Which are two possible code fragments that you can insert at line 02 to achieve the goal? Each correct
+        answer presents a complete solution
+    </xmp>
+    <script>
+        function Student(someName) {
+            //fullname=someName;       // A - No es parte de la funcion define una variable global
+            //var fullname=someName; // B - undefined /Encapsulamento privado
+            //This.fullname=someName;  // C - Error de sintaxis con el This
+            this.fullname=someName;  // D - Encapsulamiento Publico   
+        }
+        bestStudent = new Student("David Hamilton");
+        document.write (bestStudent.fullname+" is registered.");
+    </script>
+
+    <xmp>
+        function Student(someName) {
+            //fullname=someName;       // A - No es parte de la funcion define una variable global
+            //var fullname=someName; // B - undefined /Encapsulamento privado
+            //This.fullname=someName;  // C - Error de sintaxis con el This
+            this.fullname=someName;  // D - Encapsulamiento Publico   
+        }
+
+        * En JavaScript esto siempre se refiere al "dueño" de la función que estamos ejecutando, o mejor dicho, al objeto del que una función es un método.
+        * Si asignas un valor a una variable que aún no ha sido declarada, la variable será declarada automáticamente como una variable GLOBAL.
+        
+        Esta declaración: carname="Volvo"; declarará la variable carname como una variable global , incluso si se ejecuta dentro de una función.
+    </xmp>
+    
+</body>
+</html>

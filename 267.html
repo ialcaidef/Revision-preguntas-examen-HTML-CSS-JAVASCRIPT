@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navlist::first-line{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <xmp>
+    QUESTION 267
+
+    NOTE: This question is part of a series of questions that presents the same scenario. Each question
+    in the series contains a unique solution that might meet the started goals. Some questions sets
+    might have more than one correct solution, while others might not have a correct solution.
+    After you answer a question in this section. you will not be able to return to it. As a result, these
+    questions will not appear in the review screen.
+    You have the following HTML5 and CSS3 markup within a webpage.
+
+    <nav id="mainmenu" class="page-nav">
+        <div id="navlist" class="container">
+            <a href="index.html"> home</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+
+    You need to set the background color of the Home link to yellow. The solution can affect the color of the
+    other elements.
+    (Tienes que poner el color de fondo del enlace home en amarillo. La solución puede afectar el color del
+    otros elementos.)
+
+    Solution: You use the following style:
+
+    <style>
+        #navlist::first-line{
+            background-color: yellow;
+        }
+    </style>
+
+    Does this meet the goal? (¿Esto cumple con el objetivo?)
+
+    A. Yes
+    B. No
+</xmp>
+<nav id="mainmenu" class="page-nav">
+    <div id="navlist" class="container">
+        <a href="index.html"> home</a>
+        <a href="register.html">Register</a>
+    </div>
+</nav>
+<br>
+<pre style='display:inline'>&#09;</pre>Respuesta <b>B</b> del ejercicio es errónea. La correcta sería la <b style="color:crimson; font-size:x-large;">A</b><br>    
+<xmp>   La propiedad background-color especifica el color de fondo de un elemento.
+    ¿No debería ser la A?, vemos que cambia el color de fondo de Index y ya en el enunciado indica que también puede afectar al color de fondo de otros elementos
+</xmp>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 153</title>
+    <style>
+        #correcto {
+            color: darkgreen;
+            font-size: 20px;
+            font-family: Courier;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 30px;
+            letter-spacing: 4px;
+            text-decoration: underline;
+            text-align: left;
+            text-indent: 30px;
+        }
+
+        #error {
+            color: red;
+            font-size: 20px;
+            font-family: Courier;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 30px;
+            letter-spacing: 1px;
+            text-decoration: underline;
+            text-transform: capitalize;
+            text-align: left;
+            text-indent: 30px;
+        }
+    </style>
+    <script>
+        function square(side, opcion) {
+            try {
+                switch (opcion) {
+                    case 'OpcionA':
+                        var sq = new squareA(side);
+
+                        sq.calcArea();
+                        break;
+                    case 'OpcionB':
+                        //new squareB(side).calcArea(); // Que objeto?
+                        //alert('new squareB(side).calcArea();');
+                        var sq = new squareB(side);
+                        break;
+                    case 'OpcionC':
+                        var sq = new squareC(side);
+                        sq.calcArea();
+                        break;
+                    case 'OpcionD':
+                        var sq = new squareD(side);
+                        sq.calcArea();
+                        break;
+                }
+                document.getElementById("error").innerHTML = '';
+                document.getElementById("correcto").innerHTML = opcion + ' correcta. Para un side de ' + side + ' el area es: ' + sq.area;
+            }
+            catch (err) {
+                document.getElementById("correcto").innerHTML = '';
+                document.getElementById("error").innerHTML = err;
+
+            }
+        }
+
+        var squareA = function squareA(side) {
+            this.side = side;
+            this.area = this.calcArea();
+        };
+        squareA.prototype = {
+            calcArea: function () {
+                return me.side * me.side;
+            }
+        }
+
+        var squareB = function squareB(side) {
+            this.side = side;
+            this.area = this.calcArea();
+        };
+        squareB.prototype = {
+            calcArea: function (obj) {
+                return obj.side * obj.side;
+            }
+        }
+
+        var squareC = function squareC(side) {
+            this.side = side;
+            this.area = this.calcArea();
+        };
+        squareC.prototype = {
+            calcArea: function () {
+                return side * side;
+            }
+        }
+
+        var squareD = function squareD(side) {
+            this.side = side;
+            this.area = this.calcArea();
+        };
+        squareD.prototype = {
+            calcArea: function () {
+                return this.side * this.side;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <xmp>
+        QUESTION 153
+
+        You are creating a custom object as described by the following code.
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="153-1.png" width="300" height="100" alt="Pregunta">
+    <xmp>
+        You need to implement the calcArea method in a new function scope.
+        Which code should you use?
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="153-2.png" width="300" height="250" alt="Pregunta"><br>
+    <pre style='display:inline'>&#09;</pre>
+    <button id="OpcionA" onclick="square(50, 'OpcionA')">Opción A</button>
+    <button id="OpcionB" onclick="square(50, 'OpcionB')">Opción B</button>
+    <button id="OpcionC" onclick="square(50, 'OpcionC')">Opción C</button>
+    <button id="OpcionD" onclick="square(50, 'OpcionD')">Opción D</button>
+    <p id="error"></p>
+    <p id="correcto"></p>
+
+    Respuesta correcta: <b>D</b>
+
+    <xmp>
+        Correct Answer: D
+        Section: Volume D
+        Explanation
+        Explanation/Reference:
+        Explanation:
+        Need to refer to .this in the calculation.
+    </xmp>
+</body>
+
+</html>

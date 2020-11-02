@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+                          
+          $(document.getElementById("opcionA")).click(function(){
+            $("input[name*='object']").val("");  
+            $("input[name$='x']").html("value1");
+            $(document.getElementById("Respuesta").innerHTML="<h4>No es correcta</h4>")
+          });
+
+          $(document.getElementById("opcionB")).click(function(){
+            $("input[name*='object']").val("");  
+            $("#input[name$='x']").val("value1");
+            $(document.getElementById("Respuesta").innerHTML="<h4>No es correcta</h4>")
+          });
+
+          $(document.getElementById("opcionC")).click(function(){
+            $("input[name*='object']").val("");  
+            $("input[name$='x']").val("value1");
+            $(document.getElementById("Respuesta").innerHTML="<h2>Respuesta correcta C</h2>")
+          });
+
+          $(document.getElementById("opcionD")).click(function(){
+            $("input[name*='object']").val("");  
+            $("#input[name$='x']").html("value1");
+            $(document.getElementById("Respuesta").innerHTML="<h4>No es correcta</h4>")
+          });
+        });
+        </script>
+</head>
+<body>
+    <xmp>
+        QUESTION 216
+        You have the following HTML markup  
+
+            <input name="object1x">
+            <input name="object1y">
+            <input name="object2x">
+        
+        For all of the fields that have names ending with the letter x, you need to set the value to value1.
+        Which code line should you use?
+
+        A. $("input[name$='x']").html("value1");
+        B. $("#input[name$='x']").val("value1");
+        C. $("input[name$='x']").val("value1");
+        D. $("#input[name$='x']").html("value1");
+    </xmp>
+
+    <input name="object1x">
+    <input name="object1y">
+    <input name="object2x">
+
+    <p>
+        <button id="opcionA">Opción A</button>
+        <button id="opcionB">Opción B</button>
+        <button id="opcionC">Opción C</button>
+        <button id="opcionD">Opción D</button>
+    </p>
+
+    <p id="Respuesta"></p>
+    <pre style='display:inline'>&#09;</pre>Respuesta corrrecta <b>C</b><br>    
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 204</title>
+
+    <style>
+    table,th,td {
+        border : 1px solid black;
+        border-collapse: collapse;
+    }
+    th,td {
+        padding: 5px;
+    }
+
+    #books {
+        font: 12px Arial;
+        width: 500px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    #books div {
+        width: auto;
+        text-align: left;
+        margin: 1px;
+        padding: 2px 5px;
+        letter-spacing: 1px;
+    }
+</style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document.getElementById("cargarXml")).click(function () {
+                $('#books').empty();       // Clear 
+                $('#demo').empty();         // Clear 
+            
+                $.ajax({
+                    type: "GET",
+                    url: "204-3.xml", // path to file
+                    dataType: 'xml', // type of file (text, json, xml, etc)
+                    success: function (xml) { // callback for successful completion
+                        alert('XML processed sucessfully');
+                        document.getElementById("books").innerHTML = '<h2>XML processed sucessfully</h2>';
+                    },
+                    error: function () { // callback if there's an error
+                        alert("error");
+                    }
+                });
+            });
+
+            $('#bt').click(function () {
+                $('#books').empty();       // Clear the DIV.
+                $('#demo').empty(); 
+                $.ajax({
+                    type: 'GET',
+                    url: '204-3.xml',           // The file path.
+                    dataType: 'xml',
+                    success: function (xml) {
+                        $(xml).find('List').each(function () {
+
+                            // Append new data to the DIV element.
+                            $('#books').append(
+                                '<div>' +
+                                '<div><b>Name of Book: </b>' +
+                                $(this).find('BookName').text() + '</div> ' +
+                                '<div><b>Category: </b>' +
+                                $(this).find('Category').text() + '</div> ' +
+                                '<div><b>Price: </b>' +
+                                $(this).find('Price').text() + '</div> ' +
+                                '</div>');
+                        });
+                    }
+                });
+            });
+        });
+
+        function loadXML() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET", "204-3.xml", true);
+            xhttp.send();
+        }
+        function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = "<tr><th>BOOKNAME</th><th>CATEGORY</th></tr>";
+            var x = xmlDoc.getElementsByTagName("List");
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("BookName")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("books").innerHTML = '';
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+</head>
+
+<body>
+    <xmp>
+        QUESTION 204
+        DRAG DROP
+        You need to write a jQuery function to consume a file named Orders.xml.
+        You write the following code
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="204-1.png" width="300" height="200" alt="Pregunta">
+    <xmp>
+        How should you complete the code? To answer, drag the appropriate code elements to the correct targets.
+        Each code element may be used once, more than once, or not at all. You may need to drag the split bar
+        between panes or scroll to view content.
+        NOTE: each correct selection is worth one point.
+        Select and Place:
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="204-2.png" width="500" height="500" alt="Pregunta">
+    <xmp>Correct Answer:</xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="204-3.png" width="500" height="500" alt="Pregunta"><br>
+
+    <button id="cargarXml">XML ejecrcicio. Cargar con Ajax</button>&nbsp;&nbsp;<button type="button" onclick="loadXML()">Cargar
+        XML con XMLHttpRequest</button>&nbsp;&nbsp;<input type="button" value="Otra formar de Cargar XML también con Ajax" id="bt" />
+    <br><br>
+    <div id="books"></div>
+    <table id="demo"></table>
+    <xmp>
+        Section: Volume D
+        Explanation
+        Explanation/Reference:
+        References:
+        https://github.com/processing/p5.js/wiki/Loading-external-files:-AJAX,-XML,-JSON
+    </xmp>
+</body>
+
+</html>

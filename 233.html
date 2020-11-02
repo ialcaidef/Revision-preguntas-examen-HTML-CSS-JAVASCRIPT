@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .yellow{
+            background-color: yellow;
+        }
+        .yellowborder{
+            border-color: yellow;
+        }
+        .border{
+            border:dashed;
+        }
+    </style>
+</head>
+<body>
+    <xmp>
+        QUESTION 233
+        DRAG DROP
+        You have the following markup:
+
+        <style>
+            .yellow{
+                background-color: yellow;
+            }
+            .yellowborder{
+                border-color: yellow;
+            }
+            .border{
+                border:dashed;
+            }
+        </style>
+        <div id="yellowDiv" class="yellow"> My yellow Content</div>
+
+        You need to add a dashed border programmatically to the div. You write the following code
+
+        document.Target1(Target2).className += Target 3;
+
+        How should you complete the code? To answer, drag the appropriate code elements to the correct targets. Each code can be used once, more than once, 
+        or not at all. You may need to drag the split bar between panes or scroll to view content.
+        NOTE: Each correct selection is worth one point.
+    </xmp>
+    <img src="233-1.png" width="600" height="300" alt="Pregunta">
+    <div id="yellowDiv" class="yellow"> My yellow Content</div>
+    <xmp>Viendo las opciones, creo que la duda puede estar si usar "border" o " border" como Target3</xmp>
+    <p> <xmp>document.getElementById("yellowDiv").className += "border";</xmp> <button id="OpcionA" onclick="funcionA();">Opcion A</button></p>
+    <p> <xmp>document.getElementById("yellowDiv").className += " border";</xmp> <button id="OpcionA" onclick="funcionB();">Opcion B</button></p>
+    
+    <script>
+        function funcionA(){
+            document.getElementById("yellowDiv").className += "border";
+            document.getElementById("yellowDiv").className += " yellow";
+            document.getElementById("yellowDiv").innerHTML = "My yellow Content";
+        }
+
+        function funcionB(){
+            document.getElementById("yellowDiv").className = " yellow";
+            document.getElementById("yellowDiv").className += " border";
+            document.getElementById("yellowDiv").innerHTML = "<h2>RESPUESTA CORRECTA<H2>";
+        }
+    </script>
+</body>
+</html>

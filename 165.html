@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <xmp>
+        QUESTION 165
+
+        You develop an HTML application that is located at www.adventure-works.com. The application must load
+        JSON data from www.fabrikam.com.
+        You need to choose an approach for loading the data (Tienes que elegir un método para cargar los datos).
+        What should you do?
+
+        A. Design a REST URI scheme with multiple domains.
+        B. Load the data by using WebSockets.
+        C. Use a JSONP request.
+        D. Load the data in a JavaScript timeout callback.
+        E. Use the jQuery getJSON method.
+        F. Reference the remote data as an XML resource.
+        
+    </xmp>
+    <p>Respuesta correcta la <b>C</b></p>
+    <xmp>
+        JSONP (también escrito JSON-P) es un método que permite enviar datos estructurados en formato JSON entre dominios distintos. 
+        Las siglas provienen de JSON (JavaScript Object Notation) with Padding (es decir, “JSON con relleno). Para eludir la política 
+        de seguridad del mismo origen al solicitar archivos de otros dominios, JSONP no utiliza el objeto XMLHttpRequest como hace el 
+        código JSON habitual, sino el elemento script, incluyendo una llamada de función. Al contrario que otros archivos, los scripts pueden 
+        ser transferidos también entre dominios sin que la SOP sea infringida por ello.
+    </xmp>
+</body>
+</html>

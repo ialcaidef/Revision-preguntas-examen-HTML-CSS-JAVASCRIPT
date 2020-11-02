@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <xmp>
+        QUESTION 199
+
+        You are developing an HTML5 web application that provides a discussion forum for users. When a user
+        registers to access the application, the user enters an email address.
+        Users can enter data that can result in cross-site scripting (XSS) attacks.
+        You need to ensure that email input is as secure as possible.
+        Which two techniques should you use? (Each correct answer presents a complete solution. Choose two.)
+
+        A. Remove all nonalphanumeric characters before submitting data.
+        B. Add an INPUT element in forms where the email address is entered and set the type of email.
+        C. Display all email addresses inside of an HTML5 ADDRESS element.
+        D. Use jQuery validation with a regular expression to ensure that email addresses are valid.
+        E. Ensure that all form data is encrypted when it is submitted
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>Respuesta corrrecta <b>BD</b><br>    
+    <xmp>
+        
+        Explicación:
+
+        B: El <input type="email"> se utiliza para los campos de entrada que deben contener una dirección de correo electrónico.
+           Dependiendo del soporte del navegador, la dirección de correo electrónico puede ser validada automáticamente cuando se envía.
+           Algunos teléfonos inteligentes reconocen el tipo de correo electrónico y añaden ".com" al teclado para que coincida con la entrada de correo electrónico.
+
+        D: JQuery puede utilizarse para validar las direcciones de correo electrónico.
+
+        Referencia:
+        https://www.w3schools.com/html/html_form_input_ty
+    </xmp>
+</body>
+</html>

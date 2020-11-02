@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        /*$("#userName").click(function (event){
+            event.stopPropagation();
+        });*/
+        
+
+        function Validate1(){
+            document.getElementById("Respuesta").innerHTML="<h2>Validate1</h2>"; 
+            alert('Validate1');
+            return false;
+        }
+
+        function Validate2(){
+            document.getElementById("Respuesta").innerHTML="<h2>Validate2</h2>";
+            alert('Validate2'); 
+            return false;
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <xmp>
+        QUESTION 250
+        HOTSPOT
+        You are developing an application in HTML5.
+        You have the following HTML markup
+
+        <div id="div1">
+            <div id="div2">
+                <div id="div3" onclick="Validate1()">
+                    <label id="userNameLabel" for="userName">User Name</label>        
+                    <input type="text" id="userName" onclick="Validate2()"/>
+                </div>
+            </div>
+        </div>
+
+        You have the following JavaScript code.
+
+        $("userName").click(function (event){
+            event.stopPropagation();
+        });
+
+        Use the drop-down menus to select the answer choice that completes each statement based on the
+        information presented in the markup. NOTE: Each correct selection is worth one point.
+    </xmp>
+    <img src="250-1.png" width="600" height="300" alt="Pregunta">
+    <img src="250-2.png" width="550" height="250" alt="Pregunta">
+    <div id="div1">
+        <div id="div2">
+            <div id="div3" onclick="Validate1();" style="border-style: solid;">
+                <label id="userNameLabel" for="userName">User Name</label>        
+                <input type="text" id="userName" onclick="Validate2();"/>
+
+            </div>
+        </div>
+    </div>
+    <p id="Respuesta"></p>
+    
+    <div>
+        Respuesta:
+        <b>Validate2 will be called when the user clicks the userName text box.</b>
+        <b>Validate1 will be called when the user clicks the userNameLabel label.<b></b>
+    </div>
+
+    <p style="color:#FF0000";>OJO!!!! Si pulsamos sobre el div, solo se ejecuta Validate1, si pulsamos sobre la caja de texto, se ejecuta Validate1 y Validate2</p>
+<script>
+    $("#userName").click(function(){
+        alert("llamada al metodo");
+        event.stopPropagation();
+
+    });
+</script>
+</body>
+</html>

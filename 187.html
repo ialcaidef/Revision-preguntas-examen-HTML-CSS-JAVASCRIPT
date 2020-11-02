@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 187</title>
+    <style>
+        @font-face {
+            font-family: 'special';
+            src: url(/Special.eot) format('embedded-opentype');
+            /*font-family:'special', sans-serif;*/                              /*no cambia la fuente*/
+            /*font-family:'special', inherit;*/
+            /*font-family:'special', font-synthesis:sans-serif;*/               /*font-synthesis no es una propiedad correcta font-family: family-name|generic-family|initial|inherit;*/
+            /*font-family:'special', font-variant: sans-serif;                  /*font-synthesis no es una propiedad correcta font-family: family-name|generic-family|initial|inherit;*/
+            /*src: local(\sans-serif') url(/Spcial.ttf) format('all');*/        /*La barr \ esta mal scrita sería src: local('DejaVu Serif Bold Italic')*/
+            src: url(/Special.ttf) format('truetype');
+        }
+
+        body {
+            /*font-family: 'special';*/                                     /*no cambia la fuente*/
+            font-family: 'special', sans-serif;                         /*HACE LA FUENTE MÁS GRANDE*/
+            /*font-family: 'special', inherit;*/                            /*no cambia la fuente*/
+            /*font-family: 'special', font-synthesis:sans-serif;*/          /*no cambia la fuente*/
+            /*font-family: 'special', font-variant:sans-serif;*/            /*no cambia la fuente*/
+            /*src: local(\sans-serif') url(/Spcial.ttf) format('all');*/    /*no cambia la fuente*/    
+            /*src: url(/Special.ttf) format('truetype');*/                  /*no cambia la fuente*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <xmp>
+        QUESTION 187
+
+        HOTSPOT
+        You are implementing an HTML page that uses a custom sans-serif font. The CSS statement for the page is as follows.
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="187-1.png" width="500" height="200" alt="Pregunta">
+    <xmp>
+        Some users report that text is displayed in the default font for the browser.
+        You need to modify the CSS statement to ensure that the content is displayed with the custom font.
+        What should you do? To answer, select the appropriate options from the drop-down lists in the answer area.
+        Hot Area: Correct Answer:
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="187-2.png" width="500" height="400" alt="Pregunta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="187-3.png" width="500" height="400" alt="Pregunta">
+
+
+    <p class="special">Estas letras se mostrarán en la fuente "special"</p>
+        
+    <p><b>Note:</b> Internet Explorer 8 and earlier, do not support the @font-face rule.</p>
+    <XMP>
+        Section: Volume D
+        Explanation
+        Explanation/Reference:
+        Explanation:
+        Using The Font You Want
+        In the CSS3 @font-face rule you must first define a name for the font (e.g. myFirstFont), and then point to
+        the font file.
+        To use the font for an HTML element, refer to the name of the font (myFirstFont) through the font-family
+        property:
+        Example
+        @font-face {
+            font-family: myFirstFont;
+            src: url(sansation_light.woff);
+        }
+        div {
+            font-family: myFirstFont;
+        }
+        Note:
+        * CSS3 Web Fonts - The @font-face Rule
+        Web fonts allow Web designers to use fonts that are not installed on the user's computer.
+        When you have found/bought the font you wish to use, just include the font file on your web server, and it
+        will be automatically downloaded to the user when needed.
+        Your "own" fonts are defined within the CSS3 @font-face rule.
+        * TrueType Fonts (TTF)
+        TrueType is a font standard developed in the late 1980s, by Apple and Microsoft. TrueType is the most
+        common font format for both the Mac OS and Microsoft Windows operating systems.
+        Reference: https://www.w3schools.com/css/css3_fonts.as
+
+        La regla @font-face se asocia típicametne a CSS3 pero muy pocos se acuerdan de que estaba disponible en CSS2, aunque sus limitaciones, 
+        principalmente en los formatos aceptados, hacían que apenas se usase. La principal actualización de esta regla en CSS3 fue precisamente la 
+        de aceptar más formatos, como .eot, .ttf, .otf y .svg, lo que hizo posible un soporte más universal entre navegadores.
+
+        Sintaxis
+
+        
+        Propiedades obligatorias
+        font-family
+        Es el nombre de la fuente y es el mismo que luego se definirá como valor en para la regla font-family en el elemento que deseemos utilizarla. 
+        Debería ir entre dobles comillas o comilla simple aunque si el nombre no contiene espacios puede escribirse sin comillas.
+
+        src
+        Se ha de definir al menos una URL dónde está ubicado el archivo de la fuente para poder importarla. Se pueden especificar varias rutas, 
+        cada una en una declaración url() y separada por una coma de la siguiente. Esto es útil para definir la ubicación de la misma fuente en diversos 
+        formatos y así maximizar la compatibilidad entre navegadores.
+
+        Recuerda que las declaraciones url() admiten URLs parciales o absolutas y que las parciales se interpretan de forma relativa al stylesheet, no al documento HTML.
+        También admite la declaración local('nombre fuente') para decirle al navegador que intente buscar entre las fuentes locales antes de descargar el archivo y ahorrar así tiempo y ancho de banda.
+    </XMP>
+</body>
+
+</html>

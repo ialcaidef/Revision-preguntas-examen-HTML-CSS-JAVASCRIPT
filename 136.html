@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>QUESTION 136</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let selectedValues;
+
+            $(document.getElementById("opcionA")).click(function () {
+                $("select option:checked").each(function () {
+                    selectedValues += $(loanTypes).text() + ',';
+                });
+                alert("Selected Option Text opcionA: "+selectedValues);
+                selectedValues=null;
+            });
+
+            $(document.getElementById("opcionB")).click(function () {
+                $("select option:selected").each(function () {
+                    selectedValues += $(loanTypes).text() + ',';
+                });
+                alert("Selected Option Text opcionB: "+selectedValues);
+                selectedValues=null;
+            });
+
+            
+            $(document.getElementById("opcionC")).click(function () {
+                $("select option:selected").each(function () {
+                    selectedValues += $(this).text() + ',';
+                });
+                alert("Selected Option Text opcionC: "+selectedValues);
+                selectedValues=null;
+            });
+
+            $(document.getElementById("opcionD")).click(function () {
+                $("#loanTypes option:selected").each(function () {
+                    selectedValues += $(this).text() + ',';
+                });
+                alert("Selected Option Text opcionD: "+selectedValues);
+                selectedValues=null;
+            });
+
+            $(document.getElementById("opcionE")).click(function () {
+                $("#loanTypes option:checked").each(function () {
+                    selectedValues += $(loanTypes).text() + ',';
+                });
+                alert("Selected Option Text opcionE: "+selectedValues);
+                selectedValues=null;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <xmp>
+        QUESTION 136
+        You develop an HTML5 webpage that contains the following HTML markup:
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="136-1.png" width="650" height="150" alt="Pregunta">
+    <xmp>
+        The page includes the following JavaScript code:
+
+        var selectedValues = '';
+
+        You have the following requirements:
+        Retrieve the content for any OPTION elements when the value of the selected attribute equals selected.
+        Add the content to a comma separated string.
+        You need to retrieve the required data.
+        Which two code segments should you add to the webpage? Each correct answer presents a complete
+        solution.
+        NOTE: Each correct selection is worth one point
+    </xmp>
+    <pre style='display:inline'>&#09;</pre>
+    <img src="136-2.png" width="600" height="400" alt="Pregunta"><br>
+
+    <label for="loanTypes">Loan Types</label>
+    <select name="loanTypes" id="loanTypes" multiple="multiple">
+        <option>Secured</option>
+        <option selected="selected">Unsecured</option>
+        <option>Demand</option>
+        <option selected="selected">Subsidized</option>
+    </select> <br>
+
+    <button id="opcionA">Opción A</button>
+    <button id="opcionB">Opción B</button>
+    <button id="opcionC">Opción C</button>
+    <button id="opcionD">Opción D</button>
+    <button id="opcionE">Opción E</button>
+
+    <p id="Respuesta"></p>
+
+    <p>Respuesta correcta <b>CD</b></p>
+    <xmp>
+        Explanation:
+        Note:
+        * select option:selected
+        :selected Selector
+        Description: Selects all elements that are selected
+    </xmp>
+</body>
+
+</html>

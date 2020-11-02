@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION 170</title>
+
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+    <style type='text/css'>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+    <script type='text/javascript'>
+        $(window).load(function () {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            var angleInDegrees = 0;
+            var image = document.createElement("img");
+            image.onload = function () {
+                context.drawImage(image, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            }
+            image.src = "170-4.jpg";
+            $("#btnOpcionA").click(function () {
+                angleInDegrees += 90;
+                drawRotated(angleInDegrees, 'OpcionA');
+            });
+
+            $("#btnOpcionB").click(function () {
+                angleInDegrees += 90;
+                drawRotated(angleInDegrees, 'OpcionB');
+            });
+
+            $("#btnOpcionC").click(function () {
+                angleInDegrees += 90;
+                drawRotated(angleInDegrees, 'OpcionC');
+            });
+
+            $("#btnOpcionD").click(function () {
+                angleInDegrees += 90;
+                drawRotated(angleInDegrees, 'OpcionD');
+            });
+
+            function drawRotated(degrees, opcion) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.save();
+                context.translate(canvas.width / 2, canvas.height / 2);
+                switch (opcion) {
+                    case 'OpcionA':
+                        context.rotate(degrees * Math.PI / 180);
+                        break;
+                    case 'OpcionB':
+                        context.spin()
+                        break;
+                    case 'OpcionC':
+                        context.translatePosition();
+                        break;
+                    default:
+                        context.setTransform()
+                        break;
+                }
+                context.drawImage(image, -image.width / 2, -image.width / 2);
+                context.restore();
+            }
+        });
+    </script>
+</head>
+
+<body onload="drawCanvas();">
+    <xmp>
+        QUESTION 170
+
+        You are developing a web page that will contain an animated logo. The web page currently has a logo
+        image on a canvas object. You reference the context of the canvas object by using a variable named
+        context.
+        You need to spin the logo image on the canvas.
+        Which method should you use?
+        A. context.rotate()
+        B. context.spin()
+        C. context.translatePosition()
+        D. context.setTransform()
+    </xmp>
+
+    <div>
+        <canvas id="canvas" width=300 height=300>
+            <p>Your browser doesn't support canvas.</p><br>
+        </canvas><br>
+        <pre style='display:inline'>&#09;</pre>
+        <button id="btnOpcionA">Opción A</button>&nbsp;<button id="btnOpcionB">Opción B</button>&nbsp;<button
+            id="btnOpcionC">Opción C</button>&nbsp;<button id="btnOpcionD">Opción D</button>
+    </div>
+    <br>
+    <pre style='display:inline'>&#09;</pre>
+    Correct Answer:<b>A</b>
+
+    <xmp>
+        Section: Volume D
+        Explanation
+        Explanation/Reference:
+        Explanation:
+        The rotate() method rotates the current drawing.
+        Example
+        Rotate the rectangle 20 degrees:
+        JavaScript:
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        ctx.rotate(20*Math.PI/180);
+        ctx.fillRect(50,20,100,50);
+        Incorrect Answers:
+        B: there is no canvas.spin method.
+        Reference: https://www.w3schools.com/Tags/canvas_rotate.as
+    </xmp>
+</body>
+
+</html>
