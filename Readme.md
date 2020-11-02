@@ -25,7 +25,7 @@ Preguntas revisadas:
 | 136  | No entiendo porque siempre en todas las opciones el primer valor que muestra es null |
 | 153  |                                                              |
 | 170  |                                                              |
-| 187  | No entiendo bien que es lo que están pidiendo                |
+| 187  |                 |
 | 204  |                                                              |
 
 
